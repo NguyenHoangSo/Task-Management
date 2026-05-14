@@ -1,7 +1,10 @@
-from flask import Flask  # type: ignore[import]
+from flask import Flask  
+from src.utilities.config import connect_db
+from src.users.route import api_bp
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    connect_db(app)
+    app.register_blueprint(api_bp)
+    return app
 
-@app.route('/')
-def hello():
-    return 'Hello, World!'

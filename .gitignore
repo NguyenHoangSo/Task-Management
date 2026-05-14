@@ -1,9 +1,0 @@
-.flaskenv
-.venv/
-requirements.txt
-__pycache__/
-instance/
-*.pyc
-*.pyo
-*.pyd
-
